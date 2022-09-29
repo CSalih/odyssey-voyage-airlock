@@ -1,0 +1,9 @@
+{
+  "name": "airlock-router",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "./router --config config.yml"
+  }
+}

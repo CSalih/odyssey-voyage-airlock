@@ -1,0 +1,22 @@
+{
+  "name": "airlock-subgraph-<NAME>",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "subgraph:publish": "rover subgraph publish apollo-odysee-airlock@current --schema schema.graphql --name <NAME>"
+  },
+  "nodemonConfig": {
+    "ext": "*.js, *.graphql"
+  },
+  "dependencies": {
+    "@apollo/subgraph": "^2.0.1",
+    "apollo-server": "^3.4.0",
+    "graphql": "^16.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

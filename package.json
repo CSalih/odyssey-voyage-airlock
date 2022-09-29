@@ -7,18 +7,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "lerna run start",
+    "start": "env-cmd lerna run start --stream --parallel",
     "db:reset": "lerna run db:reset",
     "db:init": "lerna run db:init",
     "subgraph:publish": "env-cmd lerna run subgraph:publish"
   },
   "workspaces": [
-    "client",
-    "monolith",
-    "router",
-    "services/*"
+    "packages/*"
   ],
   "devDependencies": {
-    "@apollo/rover": "^0.9.0"
+    "@apollo/rover": "^0.9.0",
+    "lerna": "^5.5.4",
+    "env-cmd": "^10.1.0"
   }
 }
