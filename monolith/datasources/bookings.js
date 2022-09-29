@@ -2,7 +2,7 @@ const { DataSource } = require('apollo-datasource');
 const { v4: uuidv4 } = require('uuid');
 const { format } = require('date-fns');
 const Sequelize = require('sequelize');
-const Booking = require('../services/bookings/sequelize/models/booking');
+const Booking = require('../../services/bookings/sequelize/models/booking');
 
 class BookingsDb extends DataSource {
   constructor() {

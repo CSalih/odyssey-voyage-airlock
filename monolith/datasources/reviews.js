@@ -1,7 +1,7 @@
 const { DataSource } = require('apollo-datasource');
 const { v4: uuidv4 } = require('uuid');
 const Sequelize = require('sequelize');
-const Review = require('../services/reviews/sequelize/models/review');
+const Review = require('../../services/reviews/sequelize/models/review');
 
 class ReviewsDb extends DataSource {
   constructor() {
