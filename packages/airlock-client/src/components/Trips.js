@@ -1,7 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Box, Heading, Link, StackDivider, Tag, VStack, Wrap} from '@chakra-ui/react';
-import {Content, Image, InnerContainer, ListingReviews, OuterContainer} from './Card';
+import {
+  Box,
+  Heading,
+  Link,
+  StackDivider,
+  Tag,
+  VStack,
+  Wrap
+} from '@chakra-ui/react';
+import {
+  Content,
+  Image,
+  InnerContainer,
+  ListingReviews,
+  OuterContainer
+} from './Card';
 import {PAST_GUEST_TRIPS} from '../pages/past-trips';
 import {Link as RouterLink, useLocation} from 'react-router-dom';
 import {gql} from '@apollo/client';

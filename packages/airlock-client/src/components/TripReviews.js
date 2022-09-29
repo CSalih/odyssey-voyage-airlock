@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
 import ReviewInput, {ReviewRating} from './TripReviewInput';
-import {Box, Button, Collapse, Flex, Heading, Stack, Text, useToast, VStack} from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Collapse,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  VStack,
+  useToast
+} from '@chakra-ui/react';
 import {IoChevronDown, IoChevronUp} from 'react-icons/io5';
 import {useMutation} from '@apollo/client';
 
