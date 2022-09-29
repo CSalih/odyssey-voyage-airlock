@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "subgraph:publish": "rover subgraph publish $APOLLO_GRAPH_REF --schema ./schema.graphql --name monolith"
   },
   "nodemonConfig": {
     "ext": "*.js, *.graphql"
