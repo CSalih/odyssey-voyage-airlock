@@ -1,16 +1,16 @@
-const { ApolloServer, gql, AuthenticationError } = require('apollo-server');
-const { readFileSync } = require('fs');
+const {ApolloServer, gql, AuthenticationError} = require('apollo-server');
+const {readFileSync} = require('fs');
 const axios = require('axios');
 
-const typeDefs = gql(readFileSync('./schema.graphql', { encoding: 'utf-8' }));
+const {BookingsDataSource, ReviewsDataSource, ListingsAPI, AccountsAPI, PaymentsAPI} = require('../services');
+const {buildSubgraphSchema} = require("@apollo/subgraph");
+const typeDefs = gql(readFileSync('./schema.graphql', {encoding: 'utf-8'}));
 const resolvers = require('./resolvers');
-const { BookingsDataSource, ReviewsDataSource, ListingsAPI, AccountsAPI, PaymentsAPI } = require('../services');
 
 require('dotenv').config();
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema: buildSubgraphSchema({typeDefs, resolvers}),
   dataSources: () => {
     return {
       bookingsDb: new BookingsDataSource(),
@@ -20,7 +20,7 @@ const server = new ApolloServer({
       paymentsAPI: new PaymentsAPI(),
     };
   },
-  context: async ({ req }) => {
+  context: async ({req}) => {
     const token = req.headers.authorization || '';
     const userId = token.split(' ')[1]; // get the user name after 'Bearer '
     if (userId) {
@@ -36,7 +36,7 @@ const server = new ApolloServer({
 });
 
 server
-  .listen()
+    .listen({port: 4001})
   .then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
   })
