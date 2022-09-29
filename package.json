@@ -8,7 +8,9 @@
   "private": true,
   "scripts": {
     "start": "lerna run start",
-    "db:reset": "lerna run db:reset"
+    "db:reset": "lerna run db:reset",
+    "db:init": "lerna run db:init",
+    "subgraph:publish": "env-cmd lerna run subgraph:publish"
   },
   "workspaces": [
     "client",

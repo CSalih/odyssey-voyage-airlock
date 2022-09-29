@@ -21,7 +21,7 @@ class BookingsDb extends DataSource {
       password: null,
       database: 'database_development',
       dialect: 'sqlite',
-      storage: './services/bookings/bookings.db', // path to the bookings database file, relative to where this datasource is initialized,
+      storage: './../services/bookings/bookings.db', // path to the bookings database file, relative to where this datasource is initialized,
       logging: false, // set this to true if you want to see logging output in the terminal console
     };
     const sequelize = new Sequelize(config.database, config.username, config.password, config);

@@ -6,8 +6,7 @@ const Review = require('../../services/reviews/sequelize/models/review');
 class ReviewsDb extends DataSource {
   constructor() {
     super();
-    const db = this.initializeSequelizeDb();
-    this.db = db;
+    this.db = this.initializeSequelizeDb();
   }
 
   initialize(config) {
@@ -20,7 +19,7 @@ class ReviewsDb extends DataSource {
       password: null,
       database: 'database_development',
       dialect: 'sqlite',
-      storage: './services/reviews/reviews.db', // path to the reviews database file, relative to where this datasource is initialized
+      storage: './../../services/reviews/reviews.db', // path to the reviews database file, relative to where this datasource is initialized
       logging: false, // set this to true if you want to see logging output in the terminal console
     };
     const sequelize = new Sequelize(config.database, config.username, config.password, config);
