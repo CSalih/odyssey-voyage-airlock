@@ -4,13 +4,13 @@ module.exports = (sequelize, DataTypes) => {
   class Review extends Model {}
   Review.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
-      rating: DataTypes.INTEGER,
-      text: DataTypes.STRING,
-      targetId: DataTypes.STRING,
-      authorId: DataTypes.STRING,
-      targetType: DataTypes.STRING,
-      bookingId: DataTypes.STRING,
+        id: {type: DataTypes.STRING, primaryKey: true, allowNull: false},
+        rating: DataTypes.INTEGER,
+        text: DataTypes.TEXT,
+        targetId: DataTypes.STRING,
+        authorId: DataTypes.STRING,
+        targetType: DataTypes.STRING,
+        bookingId: DataTypes.STRING,
     },
     {
       sequelize,
