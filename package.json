@@ -14,6 +14,8 @@
     "client",
     "monolith",
     "services/*"
-  ]
+  ],
+  "devDependencies": {
+    "@apollo/rover": "^0.9.0"
+  }
 }
-
