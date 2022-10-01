@@ -51,7 +51,7 @@ const resolvers = {
             return dataSources.accountsAPI.getUser(user.id);
         },
     },
-    GUEST: {
+    Guest: {
         __resolveReference: (user, {dataSources}) => {
             return dataSources.accountsAPI.getUser(user.id);
         },
