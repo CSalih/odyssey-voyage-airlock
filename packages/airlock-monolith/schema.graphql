@@ -76,8 +76,6 @@ type Listing @key(fields: "id") {
   reviews: [Review]!
   "The overall calculated rating for a listing"
   overallRating: Float
-  "Owner of the listing"
-  host: Host!
 }
 
 "A booking is reserved for a certain date range, marked by the checkInDate and checkOutDate fields"

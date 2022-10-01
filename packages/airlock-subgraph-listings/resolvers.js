@@ -99,6 +99,9 @@ const resolvers = {
     },
   },
   Listing: {
+    host: ({ hostId }) => {
+        return { id: hostId };
+    },
     totalCost: async ({id}, {checkInDate, checkOutDate}, {dataSources}) => {
       const {totalCost} = await dataSources.listingsAPI.getTotalCost({id, checkInDate, checkOutDate});
       return totalCost;
