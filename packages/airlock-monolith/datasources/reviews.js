@@ -1,6 +1,7 @@
 const { DataSource } = require('apollo-datasource');
 const { v4: uuidv4 } = require('uuid');
-const Sequelize = require('sequelize');
+const fs = require('fs')
+const { Sequelize } = require('sequelize');
 const Review = require('../../airlock-service-reviews/sequelize/models/review');
 
 class ReviewsDb extends DataSource {
@@ -19,9 +20,12 @@ class ReviewsDb extends DataSource {
         password: null,
         database: 'database_development',
         dialect: 'sqlite',
-        storage: './../../../packages/airlock-service-reviews/reviews.db', // path to the airlock-service-reviews database file, relative to where this datasource is initialized
+        storage: '../airlock-service-reviews/reviews.db', // path to the airlock-service-reviews database file, relative to where this datasource is initialized
         logging: false, // set this to true if you want to see logging output in the terminal console
     };
+    if (!fs.existsSync(config.storage)) {
+      throw new Error(`No file found at ${config.storage}. Make sure you have initialized the database.`);
+    }
     const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
     const db = {};
