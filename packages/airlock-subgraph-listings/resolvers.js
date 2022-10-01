@@ -99,6 +99,9 @@ const resolvers = {
     },
   },
   Listing: {
+    __resolveReference: ({id}, {dataSources}) => {
+      return dataSources.listingsAPI.getListing(id);
+    },
     host: ({ hostId }) => {
         return { id: hostId };
     },

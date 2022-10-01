@@ -1,0 +1,27 @@
+{
+  "name": "airlock-subgraph-bookings",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "subgraph:publish": "rover subgraph publish $APOLLO_GRAPH_REF --schema schema.graphql --name bookings --routing-url=http://localhost:4004"
+  },
+  "nodemonConfig": {
+    "ext": "*.js, *.graphql"
+  },
+  "dependencies": {
+    "@apollo/subgraph": "^2.0.1",
+    "apollo-datasource": "^3.1.0",
+    "apollo-server": "^3.4.0",
+    "date-fns": "^2.25.0",
+    "axios": "^0.27.2",
+    "graphql": "^16.3.0",
+    "sequelize": "^6.9.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
