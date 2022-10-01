@@ -69,6 +69,11 @@ interface User {
   id: ID!
 }
 
+"A guest is a type of Airlock user. They book places to stay."
+type Guest implements User @key(fields: "id") {
+  id: ID!
+}
+
 "A host is a type of Airlock user. They own airlock-service-listings."
 type Host implements User @key(fields: "id") {
   id: ID!
